@@ -7,6 +7,9 @@
 */ import React, { FC, useState } from "react";
 import HeaderIcon from "../../../public/images/headerIcon";
 import * as H from "./styled";
+import { navItem } from "../../presenter/main/navItems";
+import Link from "next/link";
+import { DropDown } from "../dropDown";
 
 const Header: FC = () => {
   const [active, setActive] = useState(false);
@@ -23,13 +26,14 @@ const Header: FC = () => {
       </H.HeaderLogo>
       <H.MainNav active={active}>
         <ul>
-          <li>
-            <H.ListMenu href="#">회사소개</H.ListMenu>
-            <H.ListMenu href="#">서비스</H.ListMenu>
-            <H.ListMenu href="#">함께가치</H.ListMenu>
-            <H.ListMenu href="#">뉴스룸</H.ListMenu>
-            <H.ListMenu href="#">글꼴</H.ListMenu>
-          </li>
+          {navItem.map((item) => {
+            return (
+              <H.ListMenu>
+                <Link href={item.path}>{item.title}</Link>
+                <DropDown />
+              </H.ListMenu>
+            );
+          })}
         </ul>
       </H.MainNav>
       <H.SubNav active={active}>

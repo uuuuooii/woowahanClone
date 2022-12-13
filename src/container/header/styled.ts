@@ -73,7 +73,8 @@ const MainNav = styled.nav<{ active: boolean }>`
   }
 `;
 
-const ListMenu = styled.a`
+const ListMenu = styled.li`
+  display: inline;
   padding: 0 17px;
   @media screen and (max-width: 750px) {
     display: block;
