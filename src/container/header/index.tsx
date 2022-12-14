@@ -9,10 +9,11 @@ import HeaderIcon from "../../../public/images/headerIcon";
 import * as H from "./styled";
 import { navItem } from "../../presenter/main/navItems";
 import Link from "next/link";
-import { DropDown } from "../dropDown";
+import { CompanyDropDown, ServiceDropDown } from "../dropDown";
 
 const Header: FC = () => {
   const [active, setActive] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
 
   const onHandleToggle = () => {
     setActive(!active);
@@ -25,16 +26,31 @@ const Header: FC = () => {
         </a>
       </H.HeaderLogo>
       <H.MainNav active={active}>
-        <ul>
-          {navItem.map((item) => {
-            return (
-              <H.ListMenu>
-                <Link href={item.path}>{item.title}</Link>
-                <DropDown />
-              </H.ListMenu>
-            );
-          })}
-        </ul>
+        <H.List>
+          <H.ListItem
+            onMouseEnter={() => setDropDown(true)}
+            onMouseLeave={() => setDropDown(false)}
+          >
+            <Link href={""}>회사소개</Link>
+            {dropDown && <CompanyDropDown />}
+          </H.ListItem>
+          <H.ListItem
+            onMouseEnter={() => setDropDown(true)}
+            onMouseLeave={() => setDropDown(false)}
+          >
+            <Link href={""}>서비스</Link>
+            {dropDown && <ServiceDropDown />}
+          </H.ListItem>
+          <H.ListItem>
+            <Link href={""}>함께가치</Link>
+          </H.ListItem>
+          <H.ListItem>
+            <Link href={""}>뉴스룸</Link>
+          </H.ListItem>
+          <H.ListItem>
+            <Link href={""}>글꼴</Link>
+          </H.ListItem>
+        </H.List>
       </H.MainNav>
       <H.SubNav active={active}>
         <H.SubListMenu>배민다움</H.SubListMenu>

@@ -1,7 +1,12 @@
 import React from "react";
+import Visual from "../visual/index";
 
 const Main = () => {
-  return <div></div>;
+  return (
+    <>
+      <Visual />
+    </>
+  );
 };
 
 export default Main;

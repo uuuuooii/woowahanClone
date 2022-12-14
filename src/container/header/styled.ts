@@ -43,8 +43,9 @@ const Header = styled.header`
   position: absolute;
   position: fixed;
   width: 100%;
-  padding: 20px 0;
+  height: 6vh;
   z-index: 1;
+  background: white;
 `;
 
 const HeaderLogo = styled.h1`
@@ -72,13 +73,25 @@ const MainNav = styled.nav<{ active: boolean }>`
     background: white;
   }
 `;
-
-const ListMenu = styled.li`
-  display: inline;
-  padding: 0 17px;
+const List = styled.ul`
+  display: flex;
+  padding: 100px 0px 0px 0px;
+`;
+const ListItem = styled.li`
+  display: block;
+  height: 10vh;
+  margin: 0 17px;
   @media screen and (max-width: 750px) {
     display: block;
   }
+`;
+
+const SubList = styled.ul`
+  position: absolute;
+  top: 4rem;
+  background-color: white;
+  opacity: 0;
+  visibility: hidden;
 `;
 
 const SubNav = styled(MainNav)`
@@ -146,7 +159,9 @@ export {
   Header,
   HeaderLogo,
   MainNav,
-  ListMenu,
+  List,
+  ListItem,
+  SubList,
   SubNav,
   SubListMenu,
   BurgerIcon,
