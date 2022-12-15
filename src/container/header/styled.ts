@@ -75,7 +75,7 @@ const MainNav = styled.nav<{ active: boolean }>`
 `;
 const List = styled.ul`
   display: flex;
-  padding: 100px 0px 0px 0px;
+  padding: 105px 0px 0px 0px;
 `;
 const ListItem = styled.li`
   display: block;
@@ -88,12 +88,27 @@ const ListItem = styled.li`
 
 const SubList = styled.ul`
   position: absolute;
-  top: 4rem;
-  background-color: white;
-  opacity: 0;
-  visibility: hidden;
+  width: 100%;
+  top: 60px;
+  left: 0;
 `;
 
+const SubItem = styled.li<{ dropDown: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  visibility: ${(props) => (props.dropDown ? "visible" : "hidden")};
+  background: white;
+
+  &:hover {
+    font-weight: 600;
+  }
+`;
+
+const RedLink = styled.a`
+  padding: 50px;
+`;
 const SubNav = styled(MainNav)`
   @media screen and (max-width: 750px) {
     margin: 500px 0;
@@ -162,6 +177,8 @@ export {
   List,
   ListItem,
   SubList,
+  SubItem,
+  RedLink,
   SubNav,
   SubListMenu,
   BurgerIcon,

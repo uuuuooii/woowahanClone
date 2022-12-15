@@ -33,21 +33,29 @@ const Visual = () => {
 
   return (
     <>
-      <section>
-        <V.Article>
+      <V.Slider>
+        <article>
           {VisualImage.map((item, index) => {
             return (
-              <>
+              <V.Box
+                className={index === currentSlide ? "slide current" : "slide"}
+                key={index}
+              >
                 {index === currentSlide && (
                   <V.Picture currentSlide={currentSlide} key={index}>
-                    <img src={item.images} alt="image" />
+                    <V.Img src={item.images} alt="image" />
+                    <V.Content>
+                      <V.Title>{item.title}</V.Title>
+                      <V.Desc>{item.desc}</V.Desc>
+                      <V.Button>{item.link}</V.Button>
+                    </V.Content>
                   </V.Picture>
                 )}
-              </>
+              </V.Box>
             );
           })}
-        </V.Article>
-      </section>
+        </article>
+      </V.Slider>
       <button onClick={prevSlide}> {"<"} </button>
       <button onClick={nextSlide}> {">"} </button>
     </>
