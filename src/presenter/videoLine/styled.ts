@@ -19,12 +19,12 @@ const Small = styled.small`
 `;
 
 const Video = styled.video`
-  display: flex;
-  align-items: center;
-  justify-items: center;
+  display: block;
+  max-width: 100%;
+  width: 780px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 80px;
 `;
 
-const Source = styled.p`
-  margin: 0 auto;
-`;
-export { Article, Title, Small, Video, Source };
+export { Article, Title, Small, Video };

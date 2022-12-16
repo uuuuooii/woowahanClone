@@ -37,35 +37,26 @@ import styled from "@emotion/styled";
 
 const Slider = styled.section`
   position: relative;
-  width: 100%;
   height: 100vh;
-  overflow: hidden;
+`;
+
+const Article = styled.article`
+  display: flex;
+  height: 100%;
 `;
 
 const Box = styled.div`
-  &.slide {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100%;
-    transform: translateX(50%);
-    transition: all 0.5s ease;
-  }
-  &.current {
-    transform: translateX(0);
-  }
+  width: 100vw;
+  height: 100%;
 `;
 
-const Picture = styled.picture<{ currentSlide: number }>`
+const Picture = styled.picture`
   display: block;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  /* transform: ${(props) =>
-    props.currentSlide ? "translateX(-0%)" : "translateX(0)"}; */
 
   transition: all 1s ease;
   @media screen and (min-width: 600px) {
@@ -73,11 +64,14 @@ const Picture = styled.picture<{ currentSlide: number }>`
     height: 100%;
   }
 `;
-
+interface ImgProps {
+  src?: string;
+}
 const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: url(${(props: ImgProps) => (props.src ? props.src : "")});
 `;
 
 const Content = styled.div`
@@ -107,4 +101,4 @@ const Button = styled.button`
   font-size: 30px;
 `;
 
-export { Slider, Box, Picture, Img, Content, Title, Desc, Button };
+export { Slider, Article, Box, Picture, Img, Content, Title, Desc, Button };

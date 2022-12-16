@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../../src/container/header";
-import Main from "../../src/container/main/main";
+import Header from "../../src/presenter/header";
+import Main from "../../src/presenter/main/main";
 
 const Index = () => {
   return (

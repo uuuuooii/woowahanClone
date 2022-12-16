@@ -35,25 +35,32 @@
 
 import styled from "@emotion/styled";
 
+const Article = styled.article`
+  padding: 0 40px;
+`;
+
+const Box = styled.div``;
+
 const List = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  top: 80px;
-  left: 0;
+  padding: 40px 0 0 0;
 `;
 
-const Item = styled.li<{ dropDown: boolean }>`
-  display: ${(props) => (props.dropDown ? "none" : "block")};
-  width: 10rem;
-  height: 64px;
-  background: gold;
-
-  &:hover {
-    font-weight: 600;
-  }
+const Item = styled.li`
+  height: 74px;
+`;
+const Title = styled.strong`
+  height: 74px;
+  font-size: 24px;
+  font-weight: 700;
 `;
 
-export { List, Item };
+const Arrow = styled.button`
+  width: 5px;
+  height: 5px;
+
+  border: solid;
+  border-width: 1px 0 0 1px;
+  transform: rotate(45deg);
+`;
+
+export { Article, Box, List, Title, Item, Arrow };

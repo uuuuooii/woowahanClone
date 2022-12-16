@@ -1,20 +1,20 @@
-import React from "react";
-import { SubContent, Titles } from "../title/title";
+import React, { FC } from "react";
+import { SubContent, Titles } from "../../commons/title";
 import * as V from "./styled";
 
-const VideoLine = () => {
+const VideoLine: FC = () => {
   return (
     <section>
       <V.Article>
-        <Titles>
-          '문 앞으로 배달되는 일상의 행복'이라는 비전으로
+        <div>
+          <Titles>'문 앞으로 배달되는 일상의 행복'이라는 비전으로</Titles>
           <SubContent>
             우아한형제들은 배달이 일상을 조금 더 행복하게 하도록 오늘도 달리고
             있어요
           </SubContent>
-        </Titles>
+        </div>
         <div>
-          <V.Video>
+          <V.Video autoPlay controls loop>
             <source
               src="https://woowahan-cdn.woowahan.com/static/media/main_service.878a686a.mp4"
               type="video/mp4"

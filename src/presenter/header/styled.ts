@@ -34,7 +34,17 @@
 // 내용
 // content :
 
+import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
+
+const slideDown = keyframes`
+  0% {
+    transform: translateY(0); //애니메이션 범위 지정
+  } 
+  100% {
+    transform: translateY(80px);
+  }
+`;
 
 const Header = styled.header`
   display: flex;
@@ -43,28 +53,20 @@ const Header = styled.header`
   position: absolute;
   position: fixed;
   width: 100%;
-  height: 6vh;
+  height: 72px;
   z-index: 1;
   background: white;
 `;
 
-const HeaderLogo = styled.h1`
-  position: relative;
-  align-items: flex-start;
-  max-width: 1180px;
-  margin: 0 auto;
-`;
-
 const MainNav = styled.nav<{ active: boolean }>`
   margin: 0 auto;
-
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 980px) {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     height: 100vh;
-    padding: 80px 0px;
+    padding: 10px 0px;
     opacity: 1;
     visibility: ${(props) => (props.active ? "visible" : "")};
     transform: ${(props) =>
@@ -75,13 +77,11 @@ const MainNav = styled.nav<{ active: boolean }>`
 `;
 const List = styled.ul`
   display: flex;
-  padding: 105px 0px 0px 0px;
 `;
 const ListItem = styled.li`
   display: block;
-  height: 10vh;
   margin: 0 17px;
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 980px) {
     display: block;
   }
 `;
@@ -89,7 +89,7 @@ const ListItem = styled.li`
 const SubList = styled.ul`
   position: absolute;
   width: 100%;
-  top: 60px;
+  top: 72px;
   left: 0;
 `;
 
@@ -98,30 +98,41 @@ const SubItem = styled.li<{ dropDown: boolean }>`
   align-items: center;
   justify-content: center;
   height: 64px;
+  padding-top: 10px;
   visibility: ${(props) => (props.dropDown ? "visible" : "hidden")};
+  transform: ${(props) =>
+    props.dropDown ? "transformY(0%)" : "translateY(-10%)"};
+  transition: 0.3s;
   background: white;
+  color: black;
+`;
+
+const SubItemLink = styled.a`
+  margin: 0 15px;
+  color: #d6d7da;
+  font-size: 16px;
+  line-height: 1.6;
 
   &:hover {
-    font-weight: 600;
+    color: #232324;
+    font-weight: 700;
   }
 `;
 
 const RedLink = styled.a`
   padding: 50px;
 `;
-const SubNav = styled(MainNav)`
-  @media screen and (max-width: 750px) {
-    margin: 500px 0;
-  }
-`;
+const SubNav = styled(MainNav)``;
 
 const SubListMenu = styled.a`
   padding: 0 12px;
-  @media screen and (max-width: 750px) {
-    display: block;
+  font-size: 12px;
+  @media screen and (max-width: 980px) {
+    opacity: 0;
   }
 `;
 
+// 제작 아이콘
 const BurgerIcon = styled.button`
   display: none;
   position: relative;
@@ -146,7 +157,7 @@ const BurgerIcon = styled.button`
   &::after {
     top: -10px;
   }
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 980px) {
     display: block;
   }
 `;
@@ -172,7 +183,6 @@ const CloseIcon = styled(BurgerIcon)`
 
 export {
   Header,
-  HeaderLogo,
   MainNav,
   List,
   ListItem,
@@ -183,4 +193,5 @@ export {
   SubListMenu,
   BurgerIcon,
   CloseIcon,
+  SubItemLink,
 };

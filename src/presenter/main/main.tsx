@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import Visual from "../visual/index";
 import Introduce from "../Introduce/index";
 import VideoLine from "../videoLine/index";
 
-const Main = () => {
+const Main: FC = () => {
   return (
     <>
       <Visual />

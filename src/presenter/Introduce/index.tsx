@@ -6,16 +6,16 @@
   ==============================================================================
 */
 
-import React from "react";
-import { IntroduceItem } from "../../presenter/main/introduce";
+import React, { FC } from "react";
+import { IntroduceItem } from "../../container/main/introduce";
 import * as I from "./styled";
-import { SubContent, Titles } from "../title/title";
+import { SubContent, Titles } from "../../commons/title";
 
 const onMouseEnter = () => {
   //   Animation.pause();
 };
 
-const Introduce = () => {
+const Introduce: FC = () => {
   return (
     <>
       <I.Section>
@@ -30,7 +30,7 @@ const Introduce = () => {
           <I.SlideBox>
             {IntroduceItem.map((item) => {
               return (
-                <I.SlideWrap>
+                <I.SlideWrap key={item.id}>
                   <I.Slide>
                     <I.Img
                       //   onMouseLeave={() => setDropDown(false)}

@@ -26,6 +26,7 @@ export const navItem = [
   {
     id: 5,
     title: "글꼴",
+    subTitle: [""],
     path: "/",
   },
 ];

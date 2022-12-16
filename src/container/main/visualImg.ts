@@ -1,5 +1,13 @@
 export const VisualImage = [
   {
+    id: 0,
+    title: "우아한형제들이 알고 싶다",
+    desc: "우리 재미지게 일해요",
+    link: "인재영입 >",
+    images:
+      "https://woowahan-cdn.woowahan.com/new_resources/image/banner/21d6e2194ef542c7a80628281c0c2228.jpg",
+  },
+  {
     id: 1,
     title: "우아한형제들이 알고 싶다",
     desc: "배민다움이 뭐예요?",
