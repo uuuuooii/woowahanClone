@@ -1,9 +1,20 @@
+/*
+  ==============================================================================
+    (c) 2022. quantum universe All rights reserved.
+    author : EUNHYE KIM
+    start date : 12/19/2022
+  ==============================================================================
+*/
+
 import styled from "@emotion/styled";
 
 const Article = styled.article`
-  padding-top: 160px;
+  padding: 80px 0;
 `;
 
+const TextBox = styled.div`
+  margin-bottom: 60px;
+`;
 const Title = styled.h3`
   text-align: center;
   font-size: 36px;
@@ -27,4 +38,4 @@ const Video = styled.video`
   margin-bottom: 80px;
 `;
 
-export { Article, Title, Small, Video };
+export { Article, TextBox, Title, Small, Video };

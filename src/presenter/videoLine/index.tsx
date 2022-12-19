@@ -1,3 +1,10 @@
+/*
+  ==============================================================================
+    (c) 2022. quantum universe All rights reserved.
+    author : EUNHYE KIM
+    start date : 12/19/2022
+  ==============================================================================
+*/
 import React, { FC } from "react";
 import { SubContent, Titles } from "../../commons/title";
 import * as V from "./styled";
@@ -6,13 +13,13 @@ const VideoLine: FC = () => {
   return (
     <section>
       <V.Article>
-        <div>
+        <V.TextBox>
           <Titles>'문 앞으로 배달되는 일상의 행복'이라는 비전으로</Titles>
           <SubContent>
             우아한형제들은 배달이 일상을 조금 더 행복하게 하도록 오늘도 달리고
             있어요
           </SubContent>
-        </div>
+        </V.TextBox>
         <div>
           <V.Video autoPlay controls loop>
             <source

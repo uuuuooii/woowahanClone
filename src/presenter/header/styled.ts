@@ -46,7 +46,7 @@ const slideDown = keyframes`
   }
 `;
 
-const Header = styled.header`
+const Header = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;

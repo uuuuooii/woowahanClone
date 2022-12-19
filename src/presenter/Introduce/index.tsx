@@ -20,12 +20,12 @@ const Introduce: FC = () => {
     <>
       <I.Section>
         <I.Article>
-          <Titles>
-            우아한형제들이 일하는 이야기
+          <I.TextBox>
+            <Titles>우아한형제들이 일하는 이야기</Titles>
             <SubContent>
               평범한 사람들이 모여 비범한 성과를 만들어 내도록
             </SubContent>
-          </Titles>
+          </I.TextBox>
 
           <I.SlideBox>
             {IntroduceItem.map((item) => {

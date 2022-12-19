@@ -38,6 +38,7 @@ import styled from "@emotion/styled";
 const Slider = styled.section`
   position: relative;
   height: 100vh;
+  padding-bottom: 80px;
 `;
 
 const Article = styled.article`

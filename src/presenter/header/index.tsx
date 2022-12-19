@@ -20,11 +20,11 @@ const Header: FC = () => {
   const [subTitleList, setSubTitleList] = useState<string[]>([""]);
 
   //slider header
+  const [windowWidth, setWindowWidth] = useState(0);
 
-  const [width, setWidth] = useState<number>(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
-  const handleResize = () => setWidth(window.innerWidth);
+  const resizeWindow = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
   const onHandleToggle = () => {
     setActive(!active);
@@ -59,58 +59,64 @@ const Header: FC = () => {
 
   //slider header
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
+    setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", resizeWindow);
+    return () => {
+      window.removeEventListener("resize", resizeWindow);
+    };
+  }, [windowWidth]);
 
   return (
-    <H.Header>
-      <Logo />
-      <H.MainNav active={active} onMouseLeave={() => setDropDown(false)}>
-        <H.List>
-          {navItem.map((item) => (
-            <H.ListItem
-              onMouseEnter={() => onHandleNav(item.title)}
-              key={item.id}
-            >
-              <Link href={item.path}>{item.title}</Link>
-              <H.SubList onClick={() => setDropDown(true)}>
-                <H.SubItem dropDown={dropDown}>
-                  {subTitleList.map((sub) => (
-                    <H.SubItemLink
-                      key={sub}
-                      href={""}
-                      onClick={() => setDropDown(false)}
-                    >
-                      {sub}
-                    </H.SubItemLink>
-                  ))}
-                </H.SubItem>
-              </H.SubList>
-            </H.ListItem>
-          ))}
-        </H.List>
-      </H.MainNav>
-      <H.SubNav active={active}>
-        {width > 980 ? (
-          <>
-            <H.SubListMenu>배민다움</H.SubListMenu>
-            <H.SubListMenu>인재영입</H.SubListMenu>
-            <H.SubListMenu>한</H.SubListMenu>
-            <H.SubListMenu>A</H.SubListMenu>
-          </>
+    <header>
+      <H.Header>
+        <Logo />
+        <H.MainNav active={active}>
+          <H.List>
+            {navItem.map((item) => (
+              <H.ListItem
+                onMouseEnter={() => onHandleNav(item.title)}
+                key={item.id}
+              >
+                <Link href={item.path}>{item.title}</Link>
+                <H.SubList
+                  onClick={() => setDropDown(true)}
+                  onMouseLeave={() => setDropDown(false)}
+                >
+                  <H.SubItem dropDown={dropDown}>
+                    {subTitleList.map((sub) => (
+                      <H.SubItemLink
+                        key={sub}
+                        href={""}
+                        onClick={() => setDropDown(false)}
+                      >
+                        {sub}
+                      </H.SubItemLink>
+                    ))}
+                  </H.SubItem>
+                </H.SubList>
+              </H.ListItem>
+            ))}
+          </H.List>
+        </H.MainNav>
+        <H.SubNav active={active}>
+          {windowWidth > 980 ? (
+            <>
+              <H.SubListMenu>배민다움</H.SubListMenu>
+              <H.SubListMenu>인재영입</H.SubListMenu>
+              <H.SubListMenu>한</H.SubListMenu>
+              <H.SubListMenu>A</H.SubListMenu>
+            </>
+          ) : (
+            <HeaderSlide />
+          )}
+        </H.SubNav>
+        {active ? (
+          <H.CloseIcon onClick={onHandleToggle} />
         ) : (
-          <HeaderSlide />
+          <H.BurgerIcon onClick={onHandleToggle} />
         )}
-      </H.SubNav>
-      {active ? (
-        <H.CloseIcon onClick={onHandleToggle} />
-      ) : (
-        <H.BurgerIcon onClick={onHandleToggle} />
-      )}
-    </H.Header>
+      </H.Header>
+    </header>
   );
 };
 

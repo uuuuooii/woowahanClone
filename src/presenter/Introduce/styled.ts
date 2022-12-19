@@ -41,8 +41,12 @@ import styled from "@emotion/styled";
 const Section = styled.section``;
 
 const Article = styled.article`
-  padding-top: 160px;
+  padding: 80px 0;
   overflow: hidden;
+`;
+
+const TextBox = styled.div`
+  margin-bottom: 60px;
 `;
 
 const Title = styled.h3`
@@ -54,10 +58,12 @@ const Title = styled.h3`
 `;
 
 const Small = styled.small`
+  text-align: center;
   display: block;
   padding-top: 20px;
   font-size: 16px;
   font-weight: 400;
+  line-height: 1.75;
 `;
 
 const SlideBox = styled.article`
@@ -102,6 +108,7 @@ const SlideItem = styled.p`
 export {
   Section,
   Article,
+  TextBox,
   Title,
   Small,
   SlideBox,

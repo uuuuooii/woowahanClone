@@ -10,7 +10,6 @@ export const Title = styled.h3`
   font-size: 36px;
   font-weight: 700;
   line-height: 1.5;
-  margin-bottom: 60px;
 `;
 
 export const Small = styled.p`
@@ -18,6 +17,7 @@ export const Small = styled.p`
   padding-top: 20px;
   font-size: 16px;
   font-weight: 400;
+  text-align: center;
 `;
 
 export const Titles = ({ children }: TitleProps) => {
