@@ -21,7 +21,7 @@ export const FooterItem = [
     id: 4,
     title: "뉴스룸",
     subTitle: ["보도자료", "언론보도", "팩트 바로 알기"],
-    path: "/",
+    path: "/newsRoom",
   },
   {
     id: 5,
@@ -29,13 +29,12 @@ export const FooterItem = [
     subTitle: [""],
     path: "/",
   },
-  {
-    footerMenu: [
-      "오시는 길",
-      "공지사항",
-      "개인정보처리방침",
-      "제휴문의",
-      "소비자중심경영",
-    ],
-  },
+];
+
+export const footerMenuItem = [
+  "오시는 길",
+  "공지사항",
+  "개인정보처리방침",
+  "제휴문의",
+  "소비자중심경영",
 ];

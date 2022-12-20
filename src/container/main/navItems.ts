@@ -21,7 +21,7 @@ export const navItem = [
     id: 4,
     title: "뉴스룸",
     subTitle: ["보도자료", "언론보도", "팩트 바로 알기"],
-    path: "/",
+    path: "/newsRoom",
   },
   {
     id: 5,

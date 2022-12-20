@@ -1,8 +1,8 @@
 import React from "react";
 import * as F from "./styled";
-import { Titles } from "../../commons/title";
+import { Titles } from "../../../commons/title";
 import { Small } from "../Introduce/styled";
-import { fontItem } from "../../container/main/mainFont";
+import { fontItem } from "../../../container/main/mainFont";
 
 const MainFont = () => {
   return (
@@ -15,17 +15,17 @@ const MainFont = () => {
             마음껏 쓰고, 널리 퍼뜨리는 것도 무료!
           </Small>
         </F.TextBox>
-        <ul>
+        <F.List>
           {fontItem.map((item) => {
             return (
-              <F.List>
+              <F.Item key={item.id}>
                 <F.FontTitle>{item.title}</F.FontTitle>
                 <em>{item.icon}</em>
-              </F.List>
+              </F.Item>
             );
           })}
-        </ul>
-        <button></button>
+        </F.List>
+        <F.Button>더보기</F.Button>
       </article>
     </F.Section>
   );

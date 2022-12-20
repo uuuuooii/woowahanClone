@@ -7,49 +7,66 @@
 */
 
 import React, { FC } from "react";
-import { FooterItem } from "../../container/main/footer";
+import { FooterItem, footerMenuItem } from "../../container/main/footer";
 import * as F from "./style";
 import { useEffect } from "react";
 import { useState } from "react";
 
+interface FooterType {
+  id: number;
+  title: string;
+  subTitle: string[];
+  path: string;
+}
 const Footer: FC = () => {
-  const [titleList, setTitleList] = useState<string[]>([""]);
-
-  useEffect(() => {
-    setTitleList(FooterItem.filter((item) => item.title)[0]?.subTitle ?? [""]);
-  });
+  const [footerMenu, setFooterMenu] = useState<FooterType[]>(FooterItem);
 
   return (
     <F.Footer>
-      <div>
+      <F.FooterBox>
         <F.List>
-          {FooterItem.map((item) => {
+          {footerMenu.map((item) => {
             return (
-              <li>
+              <li key={item.id}>
                 <F.Title>{item.title}</F.Title>
                 <F.ListSubTitle>
-                  <li>
-                    {titleList.map((item) => {
-                      return <F.ItemSubTitle key={item}>{item}</F.ItemSubTitle>;
-                    })}
-                  </li>
+                  {item.subTitle.map((item) => {
+                    return (
+                      <F.ItemSubTitle key={item}>
+                        <F.SubItem>{item}</F.SubItem>
+                      </F.ItemSubTitle>
+                    );
+                  })}
                 </F.ListSubTitle>
-                <ul>
-                  <li>{item.footerMenu}</li>
-                </ul>
               </li>
             );
           })}
+          <ul>
+            {footerMenuItem.map((item) => {
+              return (
+                <F.ItemSubTitle>
+                  <F.SubItem>{item}</F.SubItem>
+                </F.ItemSubTitle>
+              );
+            })}
+          </ul>
         </F.List>
-        <div>
-          <h2></h2>
+        <F.ButtonBox>
+          <F.Button>관련 사이트</F.Button>
+        </F.ButtonBox>
+        <F.AdressBox>
+          <F.Title>(주)우아한형제들</F.Title>
           <address>
-            <p>
-              <span></span>
-            </p>
+            <F.AdressText>
+              <span>사업자 등록번호 : 120-87-65763</span>
+              <F.Iline>|</F.Iline>
+              <span>대표 : 김봉진, 김범준</span>
+              <F.Iline>|</F.Iline>
+              <span>주소 : 서울시 송파구 위례성대로 2 (방이동, 장은빌딩)</span>
+            </F.AdressText>
           </address>
-        </div>
-      </div>
+        </F.AdressBox>
+      </F.FooterBox>
     </F.Footer>
   );
 };

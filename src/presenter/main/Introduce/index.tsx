@@ -7,9 +7,9 @@
 */
 
 import React, { FC } from "react";
-import { IntroduceItem } from "../../container/main/introduce";
+import { IntroduceItem } from "../../../container/main/introduce";
 import * as I from "./styled";
-import { SubContent, Titles } from "../../commons/title";
+import { SubContent, Titles } from "../../../commons/title";
 
 const onMouseEnter = () => {
   //   Animation.pause();

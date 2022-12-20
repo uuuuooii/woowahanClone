@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, FC } from "react";
-import { VisualImage } from "../../container/main/visualImg";
+import { VisualImage } from "../../../container/main/visualImg";
 import * as V from "./styled";
 
 const Visual: FC = () => {

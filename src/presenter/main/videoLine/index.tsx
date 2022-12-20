@@ -6,7 +6,7 @@
   ==============================================================================
 */
 import React, { FC } from "react";
-import { SubContent, Titles } from "../../commons/title";
+import { SubContent, Titles } from "../../../commons/title";
 import * as V from "./styled";
 
 const VideoLine: FC = () => {

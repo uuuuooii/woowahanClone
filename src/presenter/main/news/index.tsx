@@ -7,8 +7,8 @@
 */
 
 import React, { FC } from "react";
-import { Titles } from "../../commons/title";
-import { newsItem } from "../../container/main/news";
+import { Titles } from "../../../commons/title";
+import { newsItem } from "../../../container/main/news";
 import * as N from "./styled";
 
 const News: FC = () => {
@@ -26,7 +26,7 @@ const News: FC = () => {
           <N.List>
             {newsItem.map((item) => {
               return (
-                <N.Item>
+                <N.Item key={item.id}>
                   <N.Picture>
                     <N.Img src={item.image} alt="img" />
                   </N.Picture>

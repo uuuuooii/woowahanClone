@@ -39,6 +39,7 @@ const Slider = styled.section`
   position: relative;
   height: 100vh;
   padding-bottom: 80px;
+  overflow-x: hidden;
 `;
 
 const Article = styled.article`
