@@ -13,6 +13,7 @@ const Footer = styled.footer`
   color: #37373a;
   letter-spacing: -0.02em;
   background-color: #f3f4f5;
+  z-index: 2;
 `;
 
 const FooterBox = styled.div`

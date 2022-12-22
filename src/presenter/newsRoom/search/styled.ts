@@ -7,7 +7,7 @@ const Section = styled.section`
 const Article = styled.article``;
 
 const TitleBox = styled.div`
-  margin: 80px auto;
+  margin: 40px auto;
   margin-bottom: 20px;
 `;
 

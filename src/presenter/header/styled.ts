@@ -46,7 +46,9 @@ const slideDown = keyframes`
   }
 `;
 
-const Header = styled.nav`
+const Header = styled.header``;
+
+const HeaderNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,12 +83,13 @@ const List = styled.ul`
 const ListItem = styled.li`
   display: block;
   margin: 0 17px;
+
   @media screen and (max-width: 980px) {
     display: block;
   }
 `;
 
-const SubList = styled.ul`
+const SubList = styled.ul<{ dropDown: boolean }>`
   position: absolute;
   width: 100%;
   top: 72px;
@@ -98,13 +101,13 @@ const SubItem = styled.li<{ dropDown: boolean }>`
   align-items: center;
   justify-content: center;
   height: 64px;
-  padding-top: 10px;
   visibility: ${(props) => (props.dropDown ? "visible" : "hidden")};
   transform: ${(props) =>
     props.dropDown ? "transformY(0%)" : "translateY(-10%)"};
   transition: 0.3s;
   background: white;
   color: black;
+  padding-right: 70px;
 `;
 
 const SubItemLink = styled.a`
@@ -112,7 +115,6 @@ const SubItemLink = styled.a`
   color: #d6d7da;
   font-size: 16px;
   line-height: 1.6;
-
   &:hover {
     color: #232324;
     font-weight: 700;
@@ -183,6 +185,7 @@ const CloseIcon = styled(BurgerIcon)`
 
 export {
   Header,
+  HeaderNav,
   MainNav,
   List,
   ListItem,

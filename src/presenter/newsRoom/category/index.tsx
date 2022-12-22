@@ -1,33 +1,78 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import * as C from "./styled";
+import { newsItem } from "../../../container/newsRoom/pressRelease";
+import { SubContent, Titles } from "../../../commons/title";
+import { newsTitle } from "../../../container/newsRoom/fact";
 
 const Category = () => {
-  const [category, setCategory] = useState("");
-  const onHandleCategory = (newCategory: string) => {
-    if (newCategory === "보도자료") {
-      setCategory("보도자료");
-    }
-    if (newCategory === "언론보도") {
-      setCategory("언론보도");
-    }
-    if (newCategory === "팩트 바로 알기") {
-      setCategory("팩트 바로 알기");
-    }
-  };
-  console.log(category);
+  const [category, setCategory] = useState("보도자료");
+
   return (
     <section>
-      <article>
-        <C.TitleBox>
-          <C.Title onClick={() => onHandleCategory("보도자료")}>
-            보도자료
-          </C.Title>
+      <C.Article>
+        <C.NewsBox>
+          <article>
+            <C.NewsTitleBox>
+              <C.Title
+                className={category === "보도자료" ? " active" : ""}
+                onClick={() => {
+                  setCategory("보도자료");
+                }}
+              >
+                보도자료
+              </C.Title>
+              <C.Title
+                className={category === "언론보도" ? " active" : ""}
+                onClick={() => {
+                  setCategory("언론보도");
+                }}
+              >
+                언론보도
+              </C.Title>
+              <C.Title
+                className={category === "팩트 바로 알기" ? " active" : ""}
+                onClick={() => {
+                  setCategory("팩트 바로 알기");
+                }}
+              >
+                팩트 바로 알기
+              </C.Title>
+            </C.NewsTitleBox>
 
-          <C.Title onClick={() => onHandleCategory}>언론보도</C.Title>
-
-          <C.Title onClick={() => onHandleCategory}>팩트 바로 알기</C.Title>
-        </C.TitleBox>
-      </article>
+            {newsTitle
+              .filter((item) => item.type === category)
+              .map((item) => {
+                return (
+                  <C.TitleBox>
+                    <Titles>{item.type}</Titles>
+                    <SubContent>{item.title}</SubContent>
+                  </C.TitleBox>
+                );
+              })}
+            <C.NewsList>
+              {newsItem
+                .filter((item) => item.type === category)
+                .map((item) => {
+                  return (
+                    <C.Item>
+                      <C.Link>
+                        <C.Picture>
+                          <C.Img src={item.image} />
+                        </C.Picture>
+                        <C.NewsItemTitle>
+                          {item.title}{" "}
+                          <C.NewsSubTitle>{item.subTitle}</C.NewsSubTitle>
+                          <C.Time>{item.data}</C.Time>
+                        </C.NewsItemTitle>
+                      </C.Link>
+                    </C.Item>
+                  );
+                })}
+              <C.Button>더보기</C.Button>
+            </C.NewsList>
+          </article>
+        </C.NewsBox>
+      </C.Article>
     </section>
   );
 };

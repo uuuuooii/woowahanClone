@@ -131,6 +131,9 @@ table {
 button {
   all: unset;
 }
+picture {
+  display: block;
+}
 
 * {
   font-family: "woowahan";

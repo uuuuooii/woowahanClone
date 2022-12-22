@@ -12,6 +12,7 @@ import {} from "../headerSlide";
 import { useEffect } from "react";
 import Logo from "../../commons/logo";
 import { HeaderSlide } from "../headerSlide/index";
+import { HeaderInner } from "../inner/inner";
 
 const Header: FC = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -67,56 +68,60 @@ const Header: FC = () => {
   }, [windowWidth]);
 
   return (
-    <header>
+    <HeaderInner>
       <H.Header>
-        <Logo />
-        <H.MainNav active={active}>
-          <H.List>
-            {navItem.map((item) => (
-              <H.ListItem
-                onMouseEnter={() => onHandleNav(item.title)}
-                key={item.id}
-              >
-                <Link href={item.path}>{item.title}</Link>
-                <H.SubList
-                  onClick={() => setDropDown(true)}
-                  onMouseLeave={() => setDropDown(false)}
+        <H.HeaderNav>
+          <Logo />
+          <H.MainNav active={active}>
+            <H.List>
+              {navItem.map((item) => (
+                <H.ListItem
+                  onMouseEnter={() => onHandleNav(item.title)}
+                  key={item.id}
                 >
-                  <H.SubItem dropDown={dropDown}>
-                    {subTitleList.map((sub) => (
-                      <H.SubItemLink
-                        key={sub}
-                        href={""}
-                        onClick={() => setDropDown(false)}
-                      >
-                        {sub}
-                      </H.SubItemLink>
-                    ))}
-                  </H.SubItem>
-                </H.SubList>
-              </H.ListItem>
-            ))}
-          </H.List>
-        </H.MainNav>
-        <H.SubNav active={active}>
-          {windowWidth > 980 ? (
-            <>
-              <H.SubListMenu>배민다움</H.SubListMenu>
-              <H.SubListMenu>인재영입</H.SubListMenu>
-              <H.SubListMenu>한</H.SubListMenu>
-              <H.SubListMenu>A</H.SubListMenu>
-            </>
+                  <Link href={item.path}>{item.title}</Link>
+
+                  <H.SubList
+                    dropDown={dropDown}
+                    onClick={() => setDropDown(true)}
+                    onMouseLeave={() => setDropDown(false)}
+                  >
+                    <H.SubItem dropDown={dropDown}>
+                      {subTitleList.map((sub) => (
+                        <H.SubItemLink
+                          key={sub}
+                          href={""}
+                          onClick={() => setDropDown(false)}
+                        >
+                          {sub}
+                        </H.SubItemLink>
+                      ))}
+                    </H.SubItem>
+                  </H.SubList>
+                </H.ListItem>
+              ))}
+            </H.List>
+          </H.MainNav>
+          <H.SubNav active={active}>
+            {windowWidth > 980 ? (
+              <>
+                <H.SubListMenu>배민다움</H.SubListMenu>
+                <H.SubListMenu>인재영입</H.SubListMenu>
+                <H.SubListMenu>한</H.SubListMenu>
+                <H.SubListMenu>A</H.SubListMenu>
+              </>
+            ) : (
+              <HeaderSlide />
+            )}
+          </H.SubNav>
+          {active ? (
+            <H.CloseIcon onClick={onHandleToggle} />
           ) : (
-            <HeaderSlide />
+            <H.BurgerIcon onClick={onHandleToggle} />
           )}
-        </H.SubNav>
-        {active ? (
-          <H.CloseIcon onClick={onHandleToggle} />
-        ) : (
-          <H.BurgerIcon onClick={onHandleToggle} />
-        )}
+        </H.HeaderNav>
       </H.Header>
-    </header>
+    </HeaderInner>
   );
 };
 
