@@ -54,10 +54,11 @@ const Time = styled.time`
   padding-top: 10px;
 `;
 
-const Button = styled.button`
+const Link = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 47px;
   height: 52px;
   margin: 40px auto 0;
   cursor: pointer;
@@ -79,5 +80,5 @@ export {
   Img,
   Title,
   Time,
-  Button,
+  Link,
 };

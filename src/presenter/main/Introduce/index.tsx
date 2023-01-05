@@ -6,16 +6,23 @@
   ==============================================================================
 */
 
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { IntroduceItem } from "../../../container/main/introduce";
 import * as I from "./styled";
 import { SubContent, Titles } from "../../../commons/title";
 
-const onMouseEnter = () => {
-  //   Animation.pause();
-};
+// const zigzagImage = (num: number) => {
+//   let img = "";
+//   if (num % 2 == 0) {
+//     return (img = "짝");
+//   } else {
+//     return (img = "홀");
+//   }
+//   return img;
+// };
 
 const Introduce: FC = () => {
+  const [num, setNum] = useState<any>();
   return (
     <>
       <I.Section>
@@ -32,12 +39,13 @@ const Introduce: FC = () => {
               return (
                 <I.SlideWrap key={item.id}>
                   <I.Slide>
-                    <I.Img
-                      //   onMouseLeave={() => setDropDown(false)}
-                      //   onMouseEnter={() => onHandleNav("company")}
-                      src={item.images}
-                      alt="image"
-                    />
+                    <I.Picture>
+                      <I.Img
+                        className={item.id % 2 === 0 ? "" : "active"}
+                        src={item.images}
+                        alt="image"
+                      />
+                    </I.Picture>
                     <I.SlideItem>{item.title}</I.SlideItem>
                   </I.Slide>
                 </I.SlideWrap>

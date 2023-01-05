@@ -44,7 +44,7 @@ const Footer: FC = () => {
           <ul>
             {footerMenuItem.map((item) => {
               return (
-                <F.ItemSubTitle>
+                <F.ItemSubTitle key={item}>
                   <F.SubItem>{item}</F.SubItem>
                 </F.ItemSubTitle>
               );

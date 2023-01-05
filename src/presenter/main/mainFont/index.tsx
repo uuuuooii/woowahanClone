@@ -5,6 +5,9 @@ import { Small } from "../Introduce/styled";
 import { fontItem } from "../../../container/main/mainFont";
 
 const MainFont = () => {
+  const onHandleAlert = () => {
+    alert("개발 중입니다.");
+  };
   return (
     <F.Section>
       <article>
@@ -20,12 +23,12 @@ const MainFont = () => {
             return (
               <F.Item key={item.id}>
                 <F.FontTitle>{item.title}</F.FontTitle>
-                <em>{item.icon}</em>
+                <F.FontIcon>{item.icon}</F.FontIcon>
               </F.Item>
             );
           })}
         </F.List>
-        <F.Button>더보기</F.Button>
+        <F.Button onClick={() => onHandleAlert()}>더보기</F.Button>
       </article>
     </F.Section>
   );

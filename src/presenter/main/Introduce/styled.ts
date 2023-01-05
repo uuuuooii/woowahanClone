@@ -69,6 +69,7 @@ const Small = styled.small`
 const SlideBox = styled.article`
   display: flex;
   height: 285px;
+
   animation: scroll 40s linear infinite;
   width: calc(500px * 10);
   @keyframes scroll {
@@ -87,22 +88,38 @@ const SlideBox = styled.article`
 const SlideWrap = styled.a`
   display: flex;
   overflow: hidden;
+
+  &:nth-child(odd) {
+    padding-top: 50px;
+    height: 350px;
+  }
 `;
 
-const Slide = styled.span``;
+const Slide = styled.span`
+  width: 180px;
+  height: auto;
+  padding: 0 10px;
+`;
+
+const Picture = styled.picture`
+  box-shadow: 0px -5px 10px 0px dimgray inset;
+  border-radius: 20px;
+`;
 const Img = styled.img`
+  position: relative;
+  z-index: -1;
   width: 180px;
   height: 250px;
-  padding: 0 10px;
   object-fit: cover;
   border-radius: 20px;
 `;
 const SlideItem = styled.p`
-  height: 52px;
-  margin: 10px 0px 0px 0px;
-  color: block;
+  margin: -63px 0px 0px 16px;
+  color: #fff;
   font-size: 16px;
   font-weight: 700;
+  line-height: 1.625;
+  overflow: hidden;
 `;
 
 export {
@@ -114,6 +131,7 @@ export {
   SlideBox,
   SlideWrap,
   Slide,
+  Picture,
   Img,
   SlideItem,
 };

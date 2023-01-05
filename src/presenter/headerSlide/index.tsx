@@ -14,11 +14,25 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export const HeaderSlide: FC = () => {
-  const [titleList, setTitleList] = useState<string[]>([""]);
+  const [checkedItem, setCheckedItem] = useState<Set<number>>(new Set());
 
-  useEffect(() => {
-    setTitleList(navItem.filter((item) => item.title)[0]?.subTitle ?? [""]);
-  });
+  const onHandleCheck = (id: number) => {
+    // 해당 id가 이미 있다면
+    if (checkedItem.has(id)) {
+      const changeItem = new Set(checkedItem);
+      // id 를 Set에서 지워줌
+      changeItem.delete(id);
+      setCheckedItem(changeItem);
+      // 해당 id가 이미 없다면
+    } else {
+      const changeItem = new Set(checkedItem);
+      // id 를 Set에 추가해줌
+      changeItem.add(id);
+      setCheckedItem(changeItem);
+    }
+    console.log(checkedItem);
+  };
+
   return (
     <HS.Article>
       <HS.Box>
@@ -29,17 +43,42 @@ export const HeaderSlide: FC = () => {
           {navItem.map((item) => {
             return (
               <HS.Item key={item.id}>
-                <HS.Title>
-                  <Link href={item.path}>{item.title}</Link>
-                </HS.Title>
-                <HS.Arrow> </HS.Arrow>
-                <ul>
-                  <li>
-                    {titleList.map((item) => {
-                      return <a key={item}>{item}</a>;
-                    })}
-                  </li>
-                </ul>
+                <HS.ItemBox>
+                  <HS.Title>
+                    <Link href={item.path}>{item.title}</Link>
+                  </HS.Title>
+                  {/* 제작 버튼 */}
+                  <div>
+                    {checkedItem.has(item.id) ? (
+                      <HS.Arrow
+                        onClick={() => {
+                          onHandleCheck(item.id);
+                        }}
+                      />
+                    ) : (
+                      <HS.UnderArrow
+                        onClick={() => {
+                          onHandleCheck(item.id);
+                        }}
+                      />
+                    )}
+                  </div>
+                </HS.ItemBox>
+                <HS.DropDownItem dropDown={checkedItem.has(item.id)}>
+                  {checkedItem.has(item.id) && (
+                    <>
+                      <HS.DropDownList dropDown={checkedItem.has(item.id)}>
+                        {item.subTitle.map((item) => {
+                          return (
+                            <>
+                              <HS.SubTitle key={item}>{item}</HS.SubTitle>
+                            </>
+                          );
+                        })}
+                      </HS.DropDownList>
+                    </>
+                  )}
+                </HS.DropDownItem>
               </HS.Item>
             );
           })}

@@ -46,21 +46,69 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  height: 74px;
+  min-height: 74px;
 `;
 const Title = styled.strong`
-  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 74px;
   font-size: 24px;
   font-weight: 700;
 `;
 
+const ItemBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+//제작 아이콘
 const Arrow = styled.button`
   width: 5px;
   height: 5px;
-
   border: solid;
-  border-width: 1px 0 0 1px;
+  border-width: 2px 0 0 2px;
   transform: rotate(45deg);
 `;
 
-export { Article, Box, List, Title, Item, Arrow };
+const UnderArrow = styled.button`
+  width: 5px;
+  height: 5px;
+  border: solid;
+  border-width: 2px 0 0 2px;
+  transform: rotate(220deg);
+`;
+
+const DropDownItem = styled.ul<{ dropDown: boolean }>`
+  margin-left: 24px;
+  visibility: ${(dropDown) => (dropDown ? "visible" : "hidden")};
+  transform: ${(dropDown) =>
+    dropDown ? "transformY(0%)" : "translateY(-10%)"};
+  transition: 0.3s;
+  background: white;
+  color: black;
+`;
+
+const DropDownList = styled.li<{ dropDown: boolean }>``;
+
+const SubTitle = styled.a`
+  display: block;
+  margin-bottom: 16px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #6c6d6f;
+`;
+
+export {
+  Article,
+  Box,
+  List,
+  Title,
+  ItemBox,
+  Item,
+  Arrow,
+  UnderArrow,
+  DropDownItem,
+  DropDownList,
+  SubTitle,
+};

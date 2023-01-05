@@ -50,6 +50,13 @@ const Header: FC = () => {
       setNav("뉴스룸");
     }
   };
+  const onHandleAlert = () => {
+    if (nav === "뉴스룸") {
+      ("");
+    } else {
+      alert("개빌 중입니다.");
+    }
+  };
 
   //subTitle filter
   useEffect(() => {
@@ -79,7 +86,9 @@ const Header: FC = () => {
                   onMouseEnter={() => onHandleNav(item.title)}
                   key={item.id}
                 >
-                  <Link href={item.path}>{item.title}</Link>
+                  <Link href={item.path} onClick={() => onHandleAlert()}>
+                    {item.title}
+                  </Link>
 
                   <H.SubList
                     dropDown={dropDown}
@@ -91,7 +100,9 @@ const Header: FC = () => {
                         <H.SubItemLink
                           key={sub}
                           href={""}
-                          onClick={() => setDropDown(false)}
+                          onClick={() => {
+                            setDropDown(false), onHandleAlert();
+                          }}
                         >
                           {sub}
                         </H.SubItemLink>
@@ -105,10 +116,18 @@ const Header: FC = () => {
           <H.SubNav active={active}>
             {windowWidth > 980 ? (
               <>
-                <H.SubListMenu>배민다움</H.SubListMenu>
-                <H.SubListMenu>인재영입</H.SubListMenu>
-                <H.SubListMenu>한</H.SubListMenu>
-                <H.SubListMenu>A</H.SubListMenu>
+                <H.SubListMenu>
+                  배민다움
+                  <H.ArrowIcon />
+                  <H.ArrowRight />
+                </H.SubListMenu>
+                <H.SubListMenu>
+                  인재영입
+                  <H.ArrowIcon />
+                  <H.ArrowRight />
+                </H.SubListMenu>
+                <H.SubListMenuKo>한</H.SubListMenuKo>
+                <H.SubListMenuEn>A</H.SubListMenuEn>
               </>
             ) : (
               <HeaderSlide />

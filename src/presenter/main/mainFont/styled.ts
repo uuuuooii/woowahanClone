@@ -12,7 +12,7 @@ const List = styled.ul`
   display: flex;
   margin: 60px 0;
   animation: scroll 30s linear infinite;
-  width: calc(350px * 10);
+  width: calc(250px * 15);
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -38,6 +38,11 @@ const FontTitle = styled.p`
   font-weight: 700;
 `;
 
+const FontIcon = styled.em`
+  display: block;
+  padding: 32px 0px 0px 85px;
+`;
+
 const Button = styled.button`
   display: flex;
   align-items: center;
@@ -55,4 +60,4 @@ const Button = styled.button`
   background-color: rgba(0, 0, 0, 0.3);
 `;
 
-export { Section, TextBox, List, Item, FontTitle, Button };
+export { Section, TextBox, List, Item, FontTitle, FontIcon, Button };

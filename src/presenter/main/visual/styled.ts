@@ -39,12 +39,13 @@ const Slider = styled.section`
   position: relative;
   height: 100vh;
   padding-bottom: 80px;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 const Article = styled.article`
   display: flex;
   height: 100%;
+  overflow-x: hidden;
 `;
 
 const Box = styled.div`

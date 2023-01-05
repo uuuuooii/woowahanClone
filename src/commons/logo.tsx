@@ -13,7 +13,7 @@ const Logo = () => {
   return (
     <>
       <HeaderLogo>
-        <a>
+        <a href="/">
           <HeaderIcon />
         </a>
       </HeaderLogo>

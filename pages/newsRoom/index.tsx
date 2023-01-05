@@ -9,7 +9,7 @@ const NewsRoom = () => {
     <>
       <Header />
       <News />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

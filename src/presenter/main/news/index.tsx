@@ -37,10 +37,10 @@ const News: FC = () => {
                 </N.Item>
               );
             })}
-            <N.Button>더보기</N.Button>
           </N.List>
         </article>
       </N.NewsWrap>
+      <N.Link href="/newsRoom">더보기</N.Link>
     </N.Section>
   );
 };

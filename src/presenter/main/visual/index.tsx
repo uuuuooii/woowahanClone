@@ -54,6 +54,11 @@ const Visual: FC = () => {
                     <V.Title>{item.title}</V.Title>
                     <V.Desc>{item.desc}</V.Desc>
                     <V.Button>{item.link}</V.Button>
+                    <button onClick={prevSlide}> 1 </button>
+                    <button onClick={nextSlide}> 2 </button>
+                    <button> 3 </button>
+                    <button onClick={nextSlide}> 4 </button>
+                    <button onClick={nextSlide}> 5 </button>
                   </V.Content>
                 </V.Picture>
               </V.Box>
@@ -61,8 +66,6 @@ const Visual: FC = () => {
           })}
         </V.Article>
       </V.Slider>
-      <button onClick={prevSlide}> {"<"} </button>
-      <button onClick={nextSlide}> {">"} </button>
     </>
   );
 };

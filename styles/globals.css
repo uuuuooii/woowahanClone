@@ -134,6 +134,9 @@ button {
 picture {
   display: block;
 }
+input {
+  outline: none;
+}
 
 * {
   font-family: "woowahan";

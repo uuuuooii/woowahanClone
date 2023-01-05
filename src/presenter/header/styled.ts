@@ -33,18 +33,7 @@
 
 // 내용
 // content :
-
-import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-
-const slideDown = keyframes`
-  0% {
-    transform: translateY(0); //애니메이션 범위 지정
-  } 
-  100% {
-    transform: translateY(80px);
-  }
-`;
 
 const Header = styled.header``;
 
@@ -129,8 +118,59 @@ const SubNav = styled(MainNav)``;
 const SubListMenu = styled.a`
   padding: 0 12px;
   font-size: 12px;
+
   @media screen and (max-width: 980px) {
     opacity: 0;
+  }
+`;
+
+const SubListMenuKo = styled(SubListMenu)`
+  font-weight: 700;
+`;
+const SubListMenuEn = styled.a`
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: -5px;
+  color: #d6d7da;
+  &::before {
+    content: "";
+    top: 50%;
+    right: 0;
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #d6d7da;
+    margin-right: 10px;
+  }
+  @media screen and (max-width: 980px) {
+    opacity: 0;
+  }
+`;
+
+const ArrowIcon = styled.button`
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -8px;
+    left: 7px;
+    border-top: 1px solid #121212;
+    border-right: 1px solid #121212;
+    transform: rotate(5deg); /* 각도 */
+  }
+`;
+
+const ArrowRight = styled.button`
+  position: absolute;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #121212; /* 선 두께 */
+    transform: rotate(45deg); /* 각도 */
   }
 `;
 
@@ -194,6 +234,10 @@ export {
   RedLink,
   SubNav,
   SubListMenu,
+  SubListMenuEn,
+  SubListMenuKo,
+  ArrowIcon,
+  ArrowRight,
   BurgerIcon,
   CloseIcon,
   SubItemLink,
