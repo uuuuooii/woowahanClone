@@ -103,11 +103,12 @@ const Desc = styled.p`
   display: block;
   margin: 78px 76px;
   width: 600px;
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-weight: 900;
   text-align: center;
   overflow: hidden;
   word-wrap: break-word;
+  white-space: pre-line;
   @media (max-width: 475px) {
     margin: 20px 76px;
     font-size: 40px;

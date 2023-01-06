@@ -145,7 +145,6 @@ const Link = styled.a`
   padding: 40px 20px;
   border-bottom: 1px solid #f3f4f5;
   &.press {
-    /* padding: 80px 20px; */
     max-width: 1020px;
   }
   &.fact {
@@ -182,9 +181,9 @@ const NewsItemTitle = styled.p`
     font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box; //해당 영역을 box 형태로 관리되도록 한다.
-    -webkit-line-clamp: 2; // 영역 내의 콘텐츠의 최대 라인수를 결정한다.
-    -webkit-box-orient: vertical; // 영역
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     line-height: 1.625;
   }
   &.press {
