@@ -19,9 +19,9 @@ const MainFont = () => {
           </Small>
         </F.TextBox>
         <F.List>
-          {fontItem.map((item) => {
+          {fontItem.map((item, index) => {
             return (
-              <F.Item key={item.id}>
+              <F.Item key={index}>
                 <F.FontTitle>{item.title}</F.FontTitle>
                 <F.FontIcon>{item.icon}</F.FontIcon>
               </F.Item>

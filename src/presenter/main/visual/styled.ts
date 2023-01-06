@@ -89,19 +89,45 @@ const Content = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 30px;
+  font-size: 2.2rem;
 `;
 
 const Desc = styled.p`
   display: block;
-  margin: 90px 90px;
-  font-size: 100px;
+  margin: 78px 76px;
+  font-size: 6rem;
   font-weight: 900;
   text-align: center;
 `;
 
 const Button = styled.button`
-  font-size: 30px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
 `;
 
-export { Slider, Article, Box, Picture, Img, Content, Title, Desc, Button };
+const SliderButtonBox = styled.div`
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+  z-index: 1;
+`;
+
+const SliderButton = styled.span`
+  color: white;
+`;
+
+export {
+  Slider,
+  Article,
+  Box,
+  Picture,
+  Img,
+  Content,
+  Title,
+  Desc,
+  Button,
+  SliderButtonBox,
+  SliderButton,
+};

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, FC } from "react";
+import { useState, useRef, useEffect, FC, SetStateAction } from "react";
 import { VisualImage } from "../../../container/main/visualImg";
 import * as V from "./styled";
 
@@ -30,8 +30,13 @@ const Visual: FC = () => {
   const auto = () => {
     slideInterval = setInterval(nextSlide, intervalTime);
   };
+
+  const goToSlide = (slideIdx: SetStateAction<number>) => {
+    setCurrentSlide(slideIdx);
+  };
+
   useEffect(() => {
-    setCurrentSlide(0);
+    setCurrentSlide(1);
   }, []);
 
   useEffect(() => {
@@ -47,20 +52,28 @@ const Visual: FC = () => {
         <V.Article ref={silderRef}>
           {VisualImage.map((item, index) => {
             return (
-              <V.Box key={index}>
+              <V.Box>
                 <V.Picture key={index}>
-                  <V.Img src={item.images} alt="image" />
+                  <V.Img src={VisualImage[currentSlide].images} alt="image" />
                   <V.Content>
-                    <V.Title>{item.title}</V.Title>
-                    <V.Desc>{item.desc}</V.Desc>
-                    <V.Button>{item.link}</V.Button>
-                    <button onClick={prevSlide}> 1 </button>
-                    <button onClick={nextSlide}> 2 </button>
-                    <button> 3 </button>
-                    <button onClick={nextSlide}> 4 </button>
-                    <button onClick={nextSlide}> 5 </button>
+                    <V.Title>{VisualImage[currentSlide].title}</V.Title>
+                    <V.Desc>{VisualImage[currentSlide].desc}</V.Desc>
+
+                    <V.Button>{VisualImage[currentSlide].link}</V.Button>
                   </V.Content>
                 </V.Picture>
+                <V.SliderButtonBox>
+                  {VisualImage.map((slide, slideIdx) => {
+                    return (
+                      <button
+                        key={slideIdx}
+                        onClick={() => goToSlide(slideIdx)}
+                      >
+                        <V.SliderButton>&#8226;</V.SliderButton>
+                      </button>
+                    );
+                  })}
+                </V.SliderButtonBox>
               </V.Box>
             );
           })}

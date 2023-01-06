@@ -69,6 +69,7 @@ const Arrow = styled.button`
   border: solid;
   border-width: 2px 0 0 2px;
   transform: rotate(45deg);
+  cursor: pointer;
 `;
 
 const UnderArrow = styled.button`
@@ -77,6 +78,7 @@ const UnderArrow = styled.button`
   border: solid;
   border-width: 2px 0 0 2px;
   transform: rotate(220deg);
+  cursor: pointer;
 `;
 
 const DropDownItem = styled.ul<{ dropDown: boolean }>`

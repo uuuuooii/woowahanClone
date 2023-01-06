@@ -10,7 +10,7 @@ import styled from "@emotion/styled";
 
 const Section = styled.section`
   max-width: 820px;
-  padding: 40px 0;
+  padding: 100px 0;
   margin: 0 auto;
 `;
 

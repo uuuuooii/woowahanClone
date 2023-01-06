@@ -212,11 +212,11 @@ const PaginationArrowButton = styled.button`
   font-size: 16px;
 `;
 
-const ButtonRound = styled.button`
+const ButtonRound = styled.span`
   cursor: pointer;
 `;
 
-const PaginationButton = styled.span`
+const PaginationButton = styled.button`
   width: 32px;
   height: 32px;
   margin: 0 auto;

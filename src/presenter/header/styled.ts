@@ -45,7 +45,7 @@ const HeaderNav = styled.nav`
   position: fixed;
   width: 100%;
   height: 72px;
-  z-index: 1;
+  z-index: 4;
   background: white;
 `;
 

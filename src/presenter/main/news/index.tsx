@@ -24,9 +24,9 @@ const News: FC = () => {
         </N.Article>
         <article>
           <N.List>
-            {newsItem.map((item) => {
+            {newsItem.map((item, index) => {
               return (
-                <N.Item key={item.id}>
+                <N.Item key={index}>
                   <N.Picture>
                     <N.Img src={item.image} alt="img" />
                   </N.Picture>

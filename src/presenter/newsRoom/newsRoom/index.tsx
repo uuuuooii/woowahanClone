@@ -152,9 +152,9 @@ const CategorySearch: FC = () => {
         </C.Article>
         <C.NewsListArticle>
           <C.NewsList>
-            {currentPosts.map((item) => {
+            {currentPosts.map((item, index) => {
               return (
-                <C.Item key={item.id}>
+                <C.Item key={index}>
                   <C.Link
                     className={`${category === "언론보도" ? "press" : "fact"}`}
                   >
