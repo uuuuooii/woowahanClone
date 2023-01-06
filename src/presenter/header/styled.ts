@@ -47,6 +47,10 @@ const HeaderNav = styled.nav`
   height: 72px;
   z-index: 4;
   background: white;
+
+  @media (max-width: 980px) {
+    justify-content: space-between;
+  }
 `;
 
 const MainNav = styled.nav<{ active: boolean }>`
@@ -102,7 +106,7 @@ const SubItem = styled.li<{ dropDown: boolean }>`
 const SubItemLink = styled.a`
   margin: 0 15px;
   color: #d6d7da;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   &:hover {
     color: #232324;
@@ -113,11 +117,14 @@ const SubItemLink = styled.a`
 const RedLink = styled.a`
   padding: 50px;
 `;
-const SubNav = styled(MainNav)``;
+const SubNav = styled(MainNav)`
+  margin: 0;
+  padding: 0 40px;
+`;
 
 const SubListMenu = styled.a`
   padding: 0 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
 
   @media screen and (max-width: 980px) {
     opacity: 0;
@@ -128,7 +135,7 @@ const SubListMenuKo = styled(SubListMenu)`
   font-weight: 700;
 `;
 const SubListMenuEn = styled.a`
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   margin-left: -5px;
   color: #d6d7da;

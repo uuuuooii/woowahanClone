@@ -86,24 +86,41 @@ const Content = styled.div`
   width: 750px;
   height: 300px;
   color: white;
+  @media (max-width: 475px) {
+    font-size: 16px;
+    height: 200px;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 2.2rem;
+  font-size: 2rem;
+  @media (max-width: 475px) {
+    font-size: 16px;
+  }
 `;
 
 const Desc = styled.p`
   display: block;
   margin: 78px 76px;
+  width: 600px;
   font-size: 6rem;
   font-weight: 900;
   text-align: center;
+  overflow: hidden;
+  word-wrap: break-word;
+  @media (max-width: 475px) {
+    margin: 20px 76px;
+    font-size: 40px;
+  }
 `;
 
 const Button = styled.button`
   font-size: 1.5rem;
   font-weight: 900;
   cursor: pointer;
+  @media (max-width: 475px) {
+    font-size: 16px;
+  }
 `;
 
 const SliderButtonBox = styled.div`

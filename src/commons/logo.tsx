@@ -6,16 +6,20 @@ const HeaderLogo = styled.h1`
   position: relative;
   align-items: flex-start;
   max-width: 1180px;
-  margin: 0 auto;
+  padding: 0 40px;
+`;
+
+const Link = styled.a`
+  display: block;
 `;
 
 const Logo = () => {
   return (
     <>
       <HeaderLogo>
-        <a href="/">
+        <Link href="/">
           <HeaderIcon />
-        </a>
+        </Link>
       </HeaderLogo>
     </>
   );

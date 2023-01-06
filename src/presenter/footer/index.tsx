@@ -27,7 +27,7 @@ const Footer: FC = () => {
         <F.List>
           {footerMenu.map((item) => {
             return (
-              <li key={item.id}>
+              <F.Item key={item.id}>
                 <F.Title>{item.title}</F.Title>
                 <F.ListSubTitle>
                   {item.subTitle.map((item) => {
@@ -38,10 +38,10 @@ const Footer: FC = () => {
                     );
                   })}
                 </F.ListSubTitle>
-              </li>
+              </F.Item>
             );
           })}
-          <ul>
+          <F.ListSubTitleTwo>
             {footerMenuItem.map((item) => {
               return (
                 <F.ItemSubTitle key={item}>
@@ -49,7 +49,7 @@ const Footer: FC = () => {
                 </F.ItemSubTitle>
               );
             })}
-          </ul>
+          </F.ListSubTitleTwo>
         </F.List>
         <F.ButtonBox>
           <F.Button>관련 사이트</F.Button>

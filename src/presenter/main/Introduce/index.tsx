@@ -11,16 +11,6 @@ import { IntroduceItem } from "../../../container/main/introduce";
 import * as I from "./styled";
 import { SubContent, Titles } from "../../../commons/title";
 
-// const zigzagImage = (num: number) => {
-//   let img = "";
-//   if (num % 2 == 0) {
-//     return (img = "짝");
-//   } else {
-//     return (img = "홀");
-//   }
-//   return img;
-// };
-
 const Introduce: FC = () => {
   const [num, setNum] = useState<any>();
   return (
@@ -28,7 +18,10 @@ const Introduce: FC = () => {
       <I.Section>
         <I.Article>
           <I.TextBox>
-            <Titles>우아한형제들이 일하는 이야기</Titles>
+            <Titles>
+              우아한형제들이 <I.Br />
+              일하는 이야기
+            </Titles>
             <SubContent>
               평범한 사람들이 모여 비범한 성과를 만들어 내도록
             </SubContent>

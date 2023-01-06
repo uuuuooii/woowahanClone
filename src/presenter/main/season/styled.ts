@@ -36,19 +36,20 @@ const SeasonImgBox = styled.div`
 `;
 
 const SeasonTextBox = styled.div`
+  width: 350px;
   color: white;
   margin: 20px 0;
 `;
 
 const Strong = styled.strong`
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.5;
 `;
 
 const Desc = styled.p`
   margin: 20px 0;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
 `;

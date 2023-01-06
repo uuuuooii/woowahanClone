@@ -79,6 +79,7 @@ const Header: FC = () => {
       <H.Header>
         <H.HeaderNav>
           <Logo />
+
           <H.MainNav active={active}>
             <H.List>
               {navItem.map((item) => (

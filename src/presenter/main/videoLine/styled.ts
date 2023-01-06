@@ -15,9 +15,17 @@ const Article = styled.article`
 const TextBox = styled.div`
   margin-bottom: 60px;
 `;
+const Br = styled.br`
+  @media (min-width: 475px) {
+    display: inline-block;
+    content: " ";
+    line-height: 1.75;
+  }
+`;
+
 const Title = styled.h3`
   text-align: center;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.5;
   padding-top: 160px;
@@ -25,7 +33,7 @@ const Title = styled.h3`
 const Small = styled.small`
   display: block;
   padding-top: 20px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 `;
 
@@ -38,4 +46,4 @@ const Video = styled.video`
   margin-bottom: 80px;
 `;
 
-export { Article, TextBox, Title, Small, Video };
+export { Article, TextBox, Br, Title, Small, Video };

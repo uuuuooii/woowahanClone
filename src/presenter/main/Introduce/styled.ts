@@ -43,15 +43,25 @@ const Section = styled.section``;
 const Article = styled.article`
   padding: 80px 0;
   overflow: hidden;
+  @media (max-width: 475px) {
+    padding: 30px 0;
+  }
 `;
 
 const TextBox = styled.div`
   margin-bottom: 60px;
 `;
 
+const Br = styled.br`
+  @media (min-width: 475px) {
+    display: inline-block;
+    content: " ";
+  }
+`;
+
 const Title = styled.h3`
   text-align: center;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.5;
   margin-bottom: 60px;
@@ -61,7 +71,7 @@ const Small = styled.small`
   text-align: center;
   display: block;
   padding-top: 20px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
 `;
@@ -116,7 +126,7 @@ const Img = styled.img`
 const SlideItem = styled.p`
   margin: -63px 0px 0px 16px;
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.625;
   overflow: hidden;
@@ -126,6 +136,7 @@ export {
   Section,
   Article,
   TextBox,
+  Br,
   Title,
   Small,
   SlideBox,

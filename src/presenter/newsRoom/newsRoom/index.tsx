@@ -165,10 +165,12 @@ const CategorySearch: FC = () => {
                     ) : (
                       []
                     )}
-                    <C.NewsItemTitle
-                      className={`${category === "언론보도" && "press"}`}
-                    >
-                      {item.title}
+                    <C.NewsItemBox>
+                      <C.NewsItemTitle
+                        className={`${category === "언론보도" && "press"}`}
+                      >
+                        {item.title}
+                      </C.NewsItemTitle>
                       <C.NewsSubTitle
                         className={`${
                           category === "언론보도" ? "press" : "fact"
@@ -176,8 +178,9 @@ const CategorySearch: FC = () => {
                       >
                         {item.subTitle}
                       </C.NewsSubTitle>
+
                       <C.Time>{item.data}</C.Time>
-                    </C.NewsItemTitle>
+                    </C.NewsItemBox>
                   </C.Link>
                 </C.Item>
               );

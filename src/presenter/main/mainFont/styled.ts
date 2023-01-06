@@ -34,7 +34,7 @@ const Item = styled.li`
 const FontTitle = styled.p`
   text-align: left;
   color: #6c6d6f;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 `;
 
@@ -52,7 +52,7 @@ const Button = styled.button`
   cursor: pointer;
   padding: 0 22px;
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.75;
   border: 1px solid #fff;

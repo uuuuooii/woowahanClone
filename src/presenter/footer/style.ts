@@ -11,7 +11,7 @@ import styled from "@emotion/styled";
 const Footer = styled.footer`
   padding: 60px 24px 85px 24px;
   color: #37373a;
-  letter-spacing: -0.02em;
+  /* letter-spacing: -0.02em; */
   background-color: #f3f4f5;
   z-index: 2;
 `;
@@ -25,19 +25,30 @@ const FooterBox = styled.div`
 
 const List = styled.ul`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   justify-content: space-between;
   flex-wrap: wrap;
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
+`;
+
+const Item = styled.li`
+  width: 100px;
 `;
 
 const Title = styled.a`
   line-height: 1.75;
   margin-bottom: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 `;
 
-const ListSubTitle = styled.ul``;
+const ListSubTitle = styled.ul`
+  @media (max-width: 480px) {
+    margin-bottom: 40px;
+  }
+`;
 
 const ItemSubTitle = styled.li`
   margin-top: 8px;
@@ -46,17 +57,26 @@ const ItemSubTitle = styled.li`
 const SubItem = styled.a`
   margin-top: 8px;
   color: #6c6d6f;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.4;
+  @media (max-width: 480px) {
+    margin: 13px 11px 0 0;
+  }
+`;
+
+const ListSubTitleTwo = styled.ul`
+  @media (max-width: 480px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const AdressBox = styled.div`
   margin-top: 28px;
-  margin-right: 345px;
 `;
 
 const AdressText = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7142857143;
 `;
 
@@ -77,7 +97,7 @@ const Button = styled.button`
   width: 100%;
   min-height: 50px;
   padding: 13px 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: left;
   box-sizing: border-box;
   border: 1px solid #a6a7a9;
@@ -89,8 +109,10 @@ export {
   Footer,
   FooterBox,
   List,
+  Item,
   Title,
   ListSubTitle,
+  ListSubTitleTwo,
   ItemSubTitle,
   SubItem,
   AdressBox,

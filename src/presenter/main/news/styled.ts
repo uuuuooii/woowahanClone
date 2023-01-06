@@ -32,24 +32,34 @@ const Item = styled.li`
 
 const Picture = styled.picture`
   margin-right: 40px;
+  @media (max-width: 750px) {
+    margin-right: 16px;
+  }
 `;
 
 const Img = styled.img`
   width: 200px;
   height: 160px;
+  @media (max-width: 750px) {
+    width: 100px;
+    height: 80px;
+  }
 `;
 const Title = styled.p`
   max-height: 64px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.6;
   word-break: keep-all;
+  @media (max-width: 750px) {
+    font-size: 16px;
+  }
 `;
 
 const Time = styled.time`
   display: block;
   color: #a6a7a9;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   padding-top: 10px;
 `;
@@ -63,7 +73,7 @@ const Link = styled.a`
   margin: 40px auto 0;
   cursor: pointer;
   padding: 0 22px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.75;
   border-radius: 8px;

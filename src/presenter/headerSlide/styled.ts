@@ -35,14 +35,10 @@
 
 import styled from "@emotion/styled";
 
-const Article = styled.article`
-  padding: 0 40px;
-`;
-
-const Box = styled.div``;
+const Article = styled.article``;
 
 const List = styled.ul`
-  padding: 40px 0 0 0;
+  padding: 10px 40px;
 `;
 
 const Item = styled.li`
@@ -53,7 +49,7 @@ const Title = styled.strong`
   align-items: center;
   justify-content: center;
   min-height: 74px;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
 `;
 
@@ -64,8 +60,9 @@ const ItemBox = styled.div`
 
 //제작 아이콘
 const Arrow = styled.button`
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
+  margin-top: 40px;
   border: solid;
   border-width: 2px 0 0 2px;
   transform: rotate(45deg);
@@ -73,8 +70,9 @@ const Arrow = styled.button`
 `;
 
 const UnderArrow = styled.button`
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
+  margin-top: 40px;
   border: solid;
   border-width: 2px 0 0 2px;
   transform: rotate(220deg);
@@ -96,14 +94,13 @@ const DropDownList = styled.li<{ dropDown: boolean }>``;
 const SubTitle = styled.a`
   display: block;
   margin-bottom: 16px;
-  font-size: 17px;
+  font-size: 1.063rem;
   line-height: 1.75;
   color: #6c6d6f;
 `;
 
 export {
   Article,
-  Box,
   List,
   Title,
   ItemBox,

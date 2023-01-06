@@ -56,7 +56,13 @@ const Visual: FC = () => {
                 <V.Picture key={index}>
                   <V.Img src={VisualImage[currentSlide].images} alt="image" />
                   <V.Content>
-                    <V.Title>{VisualImage[currentSlide].title}</V.Title>
+                    <V.Title>
+                      {
+                        VisualImage.filter((item) => item.title === item.title)[
+                          currentSlide
+                        ].title
+                      }
+                    </V.Title>
                     <V.Desc>{VisualImage[currentSlide].desc}</V.Desc>
 
                     <V.Button>{VisualImage[currentSlide].link}</V.Button>

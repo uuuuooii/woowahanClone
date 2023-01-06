@@ -35,9 +35,7 @@ export const HeaderSlide: FC = () => {
 
   return (
     <HS.Article>
-      <HS.Box>
-        <Logo />
-      </HS.Box>
+      <Logo />
       <nav>
         <HS.List>
           {navItem.map((item) => {
