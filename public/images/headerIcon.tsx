@@ -1,12 +1,26 @@
-import React from "react";
+import { useState, useEffect } from "react";
 const HeaderIcon = () => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  //width 980px일때 다르게보이게
+  const resizeWindow = () => {
+    setWindowWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", resizeWindow);
+    return () => {
+      window.removeEventListener("resize", resizeWindow);
+    };
+  }, [windowWidth]);
+
   return (
     <svg
       version="1.1"
       id="레이어_1"
       xmlns="http://www.w3.org/2000/svg"
-      width="115"
-      height="32"
+      width={windowWidth > 980 ? "115" : "91.3"}
+      height={windowWidth > 980 ? "32" : "24.83"}
       viewBox="0 0 340.2 88.7"
     >
       <g>

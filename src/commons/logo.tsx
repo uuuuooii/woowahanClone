@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 import HeaderIcon from "../../public/images/headerIcon";
 
@@ -7,6 +6,9 @@ const HeaderLogo = styled.h1`
   align-items: flex-start;
   max-width: 1180px;
   padding: 0 40px;
+  @media (max-width: 980px) {
+    padding: 0 24px;
+  }
 `;
 
 const Link = styled.a`

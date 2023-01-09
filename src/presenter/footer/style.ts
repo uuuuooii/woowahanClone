@@ -28,14 +28,12 @@ const List = styled.ul`
   /* justify-content: center; */
   justify-content: space-between;
   flex-wrap: wrap;
-  @media (max-width: 480px) {
+  @media (max-width: 750px) {
     flex-wrap: wrap;
   }
 `;
 
-const Item = styled.li`
-  width: 100px;
-`;
+const Item = styled.li``;
 
 const Title = styled.a`
   line-height: 1.75;
@@ -45,13 +43,9 @@ const Title = styled.a`
 `;
 
 const ListSubTitle = styled.ul`
-  @media (max-width: 480px) {
+  @media (max-width: 750px) {
     margin-bottom: 40px;
   }
-`;
-
-const ItemSubTitle = styled.li`
-  margin-top: 8px;
 `;
 
 const SubItem = styled.a`
@@ -59,7 +53,7 @@ const SubItem = styled.a`
   color: #6c6d6f;
   font-size: 0.875rem;
   line-height: 1.4;
-  @media (max-width: 480px) {
+  @media (max-width: 750px) {
     margin: 13px 11px 0 0;
   }
 `;
@@ -68,11 +62,26 @@ const ListSubTitleTwo = styled.ul`
   @media (max-width: 480px) {
     display: flex;
     flex-wrap: wrap;
+    flex-basis: 100%;
+    margin-top: 6px;
+    padding-top: 40px;
+    border-top: 1px solid #d6d7da;
+  }
+`;
+
+const ItemSubTitle = styled.li`
+  margin-top: 8px;
+  @media (max-width: 480px) {
+    flex-basis: 50%;
   }
 `;
 
 const AdressBox = styled.div`
   margin-top: 28px;
+  margin-right: 345px;
+  @media (max-width: 750px) {
+    margin-right: 0;
+  }
 `;
 
 const AdressText = styled.p`
@@ -86,9 +95,17 @@ const Iline = styled.i`
 
 const ButtonBox = styled.div`
   position: absolute;
+  width: 327px;
   bottom: 0;
   right: 7px;
-  width: 327px;
+  @media (max-width: 750px) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 `;
 
 const Button = styled.button`

@@ -47,18 +47,24 @@ export const HeaderSlide: FC = () => {
                   </HS.Title>
                   {/* 제작 버튼 */}
                   <div>
-                    {checkedItem.has(item.id) ? (
-                      <HS.Arrow
-                        onClick={() => {
-                          onHandleCheck(item.id);
-                        }}
-                      />
+                    {item.title !== "글꼴" ? (
+                      <>
+                        {checkedItem.has(item.id) ? (
+                          <HS.Arrow
+                            onClick={() => {
+                              onHandleCheck(item.id);
+                            }}
+                          />
+                        ) : (
+                          <HS.UnderArrow
+                            onClick={() => {
+                              onHandleCheck(item.id);
+                            }}
+                          />
+                        )}
+                      </>
                     ) : (
-                      <HS.UnderArrow
-                        onClick={() => {
-                          onHandleCheck(item.id);
-                        }}
-                      />
+                      ""
                     )}
                   </div>
                 </HS.ItemBox>
@@ -82,10 +88,43 @@ export const HeaderSlide: FC = () => {
           })}
         </HS.List>
       </nav>
-      <nav>
-        <a></a>
-      </nav>
-      <footer></footer>
+      <HS.SubNav>
+        <ul>
+          <HS.SubNavItem className="first">
+            <HS.SubNavLink className="first">배민다움</HS.SubNavLink>
+          </HS.SubNavItem>
+          <HS.SubNavItem className="first">
+            <HS.SubNavLink className="first">인재영입</HS.SubNavLink>
+          </HS.SubNavItem>
+          <HS.SubNavItem>
+            <HS.SubNavLink>우유안부</HS.SubNavLink>
+          </HS.SubNavItem>
+          <HS.SubNavItem>
+            <HS.SubNavLink>기술 블로그</HS.SubNavLink>
+          </HS.SubNavItem>
+          <HS.SubNavItem>
+            <HS.SubNavLink>주간 배짱이</HS.SubNavLink>
+          </HS.SubNavItem>
+        </ul>
+      </HS.SubNav>
+      <HS.SubNavFootBox>
+        <ul>
+          <HS.SubNavFootItem>
+            <a className="foot">공지사항</a>
+          </HS.SubNavFootItem>
+          <HS.SubNavFootItem>
+            <a className="foot">오시는 길</a>
+          </HS.SubNavFootItem>
+        </ul>
+        <ul>
+          <HS.SubNavFootItem>
+            <button className="line">한</button>
+          </HS.SubNavFootItem>
+          <HS.SubNavFootItem>
+            <button className="foot">A</button>
+          </HS.SubNavFootItem>
+        </ul>
+      </HS.SubNavFootBox>
     </HS.Article>
   );
 };

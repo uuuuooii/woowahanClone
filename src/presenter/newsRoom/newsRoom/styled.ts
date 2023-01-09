@@ -8,6 +8,10 @@
 import styled from "@emotion/styled";
 
 const Section = styled.section`
+  min-height: calc(100vh - 363px);
+`;
+
+const ArticleTitle = styled.article`
   padding-top: 50px;
 `;
 
@@ -265,6 +269,7 @@ const PaginationButton = styled.button`
 `;
 export {
   Section,
+  ArticleTitle,
   MainTitleBox,
   MainTitle,
   InputBox,

@@ -38,7 +38,7 @@ import styled from "@emotion/styled";
 const Article = styled.article``;
 
 const List = styled.ul`
-  padding: 10px 40px;
+  padding: 10px 24px;
 `;
 
 const Item = styled.li`
@@ -62,7 +62,7 @@ const ItemBox = styled.div`
 const Arrow = styled.button`
   width: 6px;
   height: 6px;
-  margin-top: 40px;
+  margin: 40px 10px;
   border: solid;
   border-width: 2px 0 0 2px;
   transform: rotate(45deg);
@@ -72,7 +72,7 @@ const Arrow = styled.button`
 const UnderArrow = styled.button`
   width: 6px;
   height: 6px;
-  margin-top: 40px;
+  margin: 40px 10px;
   border: solid;
   border-width: 2px 0 0 2px;
   transform: rotate(220deg);
@@ -99,6 +99,71 @@ const SubTitle = styled.a`
   color: #6c6d6f;
 `;
 
+const SubNav = styled.nav`
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  padding: 40px 24px;
+  font-size: 16px;
+  border-top: 1px solid #ebeef2;
+`;
+
+const SubNavItem = styled.li`
+  display: inline;
+  height: 44px;
+  &:nth-child(odd) {
+    .first {
+      font-weight: 700;
+    }
+    float: left;
+    clear: left;
+    margin-right: 24px;
+  }
+
+  &:nth-child(even) {
+    .first {
+      font-weight: 700;
+      margin-right: 18px;
+    }
+    float: right;
+    clear: right;
+    margin-left: 24px;
+  }
+`;
+
+const SubNavLink = styled.a``;
+
+const SubNavFootBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SubNavFootItem = styled.li`
+  display: inline;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  :first-child {
+    margin-right: -14px;
+  }
+  .foot {
+    color: #a6a7a9;
+  }
+  .line {
+    &::after {
+      width: 1px;
+      height: 10px;
+      content: "";
+      top: 50%;
+      left: 0;
+      display: inline-block;
+      background-color: #d6d7da;
+      margin-left: 19px;
+    }
+  }
+`;
+
 export {
   Article,
   List,
@@ -110,4 +175,9 @@ export {
   DropDownItem,
   DropDownList,
   SubTitle,
+  SubNav,
+  SubNavItem,
+  SubNavLink,
+  SubNavFootBox,
+  SubNavFootItem,
 };

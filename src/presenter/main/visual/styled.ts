@@ -132,8 +132,15 @@ const SliderButtonBox = styled.div`
   z-index: 1;
 `;
 
-const SliderButton = styled.span`
-  color: white;
+const SliderButton = styled.div<{ currentSlide: number; slideIdx: number }>`
+  width: ${(props) => (props.currentSlide === props.slideIdx ? "20px" : "8px")};
+  height: 8px;
+  margin: 4px;
+  border-radius: 4px;
+  background-color: white;
+  transition: ${(props) =>
+    props.currentSlide === props.slideIdx ? " 0.3s ease-in-out" : ""};
+  opacity: ${(props) => (props.currentSlide === props.slideIdx ? "1" : "0.1")};
 `;
 
 export {

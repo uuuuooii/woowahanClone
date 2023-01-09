@@ -50,6 +50,7 @@ const HeaderNav = styled.nav`
 
   @media (max-width: 980px) {
     justify-content: space-between;
+    height: 50px;
   }
 `;
 

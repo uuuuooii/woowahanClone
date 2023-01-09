@@ -86,129 +86,125 @@ const CategorySearch: FC = () => {
   };
 
   return (
-    <>
-      <C.Section>
-        <article>
-          <C.MainTitleBox>
-            <C.MainTitle>뉴스룸</C.MainTitle>
-          </C.MainTitleBox>
-          <C.InputBox>
-            <span>
-              {/* 돋보기 제작 아이콘 */}
-              <C.SearchGlasses onClick={onHandleInputFocus}>
-                <C.SearchGlassesCircle />
-                <C.SearchGlassesLine />
-              </C.SearchGlasses>
-              <C.Input
-                type="text"
-                placeholder="검색해보세요"
-                onChange={(e) => searchItems(e.target.value)}
-                ref={inputFocus}
-              />
-            </span>
-          </C.InputBox>
-        </article>
-      </C.Section>
-      <section>
-        <C.Article>
-          <C.NewsTitleBox>
-            {/* 타이틀과 맞는 데이터 보여주기 */}
-            <C.Title
-              onClick={() => {
-                setCategory("보도자료");
-              }}
-              active={category === "보도자료"}
-            >
-              보도자료
-            </C.Title>
-            <C.Title
-              onClick={() => {
-                setCategory("언론보도");
-              }}
-              active={category === "언론보도"}
-            >
-              언론보도
-            </C.Title>
-            <C.Title
-              onClick={() => {
-                setCategory("팩트 바로 알기");
-              }}
-              active={category === "팩트 바로 알기"}
-            >
-              팩트 바로 알기
-            </C.Title>
-            <C.Line />
-          </C.NewsTitleBox>
-          {newsTitle
-            .filter((item) => item.type === category)
-            .map((item) => {
-              return (
-                <C.TitleBox key={item.id}>
-                  <Titles>{item.type}</Titles>
-                  <SubContent>{item.title}</SubContent>
-                </C.TitleBox>
-              );
-            })}
-        </C.Article>
-        <C.NewsListArticle>
-          <C.NewsList>
-            {currentPosts.map((item, index) => {
-              return (
-                <C.Item key={index}>
-                  <C.Link
-                    className={`${category === "언론보도" ? "press" : "fact"}`}
-                  >
-                    {category === "보도자료" ? (
-                      <picture>
-                        <C.Img src={item.image} />
-                      </picture>
-                    ) : (
-                      []
-                    )}
-                    <C.NewsItemBox>
-                      <C.NewsItemTitle
-                        className={`${category === "언론보도" && "press"}`}
-                      >
-                        {item.title}
-                      </C.NewsItemTitle>
-                      <C.NewsSubTitle
-                        className={`${
-                          category === "언론보도" ? "press" : "fact"
-                        }`}
-                      >
-                        {item.subTitle}
-                      </C.NewsSubTitle>
-
-                      <C.Time>{item.data}</C.Time>
-                    </C.NewsItemBox>
-                  </C.Link>
-                </C.Item>
-              );
-            })}
-            {windowWidth > 980 ? (
-              <C.PagenationBox>
-                <C.PaginationArrowButton> &#60;</C.PaginationArrowButton>
-                {/* 페이지 번호 출력 */}
-                {pageNumbers.map((num) => (
-                  <li key={num}>
-                    <C.PaginationButton
-                      onClick={() => {
-                        paginate(num);
-                      }}
+    <C.Section>
+      <C.ArticleTitle>
+        <C.MainTitleBox>
+          <C.MainTitle>뉴스룸</C.MainTitle>
+        </C.MainTitleBox>
+        <C.InputBox>
+          <span>
+            {/* 돋보기 제작 아이콘 */}
+            <C.SearchGlasses onClick={onHandleInputFocus}>
+              <C.SearchGlassesCircle />
+              <C.SearchGlassesLine />
+            </C.SearchGlasses>
+            <C.Input
+              type="text"
+              placeholder="검색해보세요"
+              onChange={(e) => searchItems(e.target.value)}
+              ref={inputFocus}
+            />
+          </span>
+        </C.InputBox>
+      </C.ArticleTitle>
+      <C.Article>
+        <C.NewsTitleBox>
+          {/* 타이틀과 맞는 데이터 보여주기 */}
+          <C.Title
+            onClick={() => {
+              setCategory("보도자료");
+            }}
+            active={category === "보도자료"}
+          >
+            보도자료
+          </C.Title>
+          <C.Title
+            onClick={() => {
+              setCategory("언론보도");
+            }}
+            active={category === "언론보도"}
+          >
+            언론보도
+          </C.Title>
+          <C.Title
+            onClick={() => {
+              setCategory("팩트 바로 알기");
+            }}
+            active={category === "팩트 바로 알기"}
+          >
+            팩트 바로 알기
+          </C.Title>
+          <C.Line />
+        </C.NewsTitleBox>
+        {newsTitle
+          .filter((item) => item.type === category)
+          .map((item) => {
+            return (
+              <C.TitleBox key={item.id}>
+                <Titles>{item.type}</Titles>
+                <SubContent>{item.title}</SubContent>
+              </C.TitleBox>
+            );
+          })}
+      </C.Article>
+      <C.NewsListArticle>
+        <C.NewsList>
+          {currentPosts.map((item, index) => {
+            return (
+              <C.Item key={index}>
+                <C.Link
+                  className={`${category === "언론보도" ? "press" : "fact"}`}
+                >
+                  {category === "보도자료" ? (
+                    <picture>
+                      <C.Img src={item.image} />
+                    </picture>
+                  ) : (
+                    []
+                  )}
+                  <C.NewsItemBox>
+                    <C.NewsItemTitle
+                      className={`${category === "언론보도" && "press"}`}
                     >
-                      <C.ButtonRound>{num}</C.ButtonRound>
-                    </C.PaginationButton>
-                  </li>
-                ))}
-                <C.PaginationArrowButton>&#62; </C.PaginationArrowButton>
-              </C.PagenationBox>
-            ) : (
-              <C.Button onClick={() => onHandleViewMore()}>더보기</C.Button>
-            )}
-          </C.NewsList>
-        </C.NewsListArticle>
-      </section>
-    </>
+                      {item.title}
+                    </C.NewsItemTitle>
+                    <C.NewsSubTitle
+                      className={`${
+                        category === "언론보도" ? "press" : "fact"
+                      }`}
+                    >
+                      {item.subTitle}
+                    </C.NewsSubTitle>
+
+                    <C.Time>{item.data}</C.Time>
+                  </C.NewsItemBox>
+                </C.Link>
+              </C.Item>
+            );
+          })}
+          {windowWidth > 980 ? (
+            <C.PagenationBox>
+              <C.PaginationArrowButton> &#60;</C.PaginationArrowButton>
+              {/* 페이지 번호 출력 */}
+              {pageNumbers.map((num) => (
+                <li key={num}>
+                  <C.PaginationButton
+                    onClick={() => {
+                      paginate(num);
+                    }}
+                  >
+                    <C.ButtonRound>{num}</C.ButtonRound>
+                  </C.PaginationButton>
+                </li>
+              ))}
+              <C.PaginationArrowButton>&#62; </C.PaginationArrowButton>
+            </C.PagenationBox>
+          ) : (
+            <C.Button onClick={() => onHandleViewMore()}>더보기</C.Button>
+          )}
+        </C.NewsList>
+      </C.NewsListArticle>
+    </C.Section>
   );
 };
 

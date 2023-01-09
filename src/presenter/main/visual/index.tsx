@@ -75,7 +75,11 @@ const Visual: FC = () => {
                         key={slideIdx}
                         onClick={() => goToSlide(slideIdx)}
                       >
-                        <V.SliderButton>&#8226;</V.SliderButton>
+                        <V.SliderButton
+                          slideIdx={slideIdx}
+                          currentSlide={currentSlide}
+                          className={slideIdx === currentSlide ? "active" : ""}
+                        />
                       </button>
                     );
                   })}
